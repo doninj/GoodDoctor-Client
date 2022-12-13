@@ -3,7 +3,6 @@ import '@fullcalendar/core/vdom' // solves problem with Vite
 import FullCalendar from '@fullcalendar/vue3'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import { GoogleMap, Marker } from 'vue3-google-map'
-import interactionPlugin from '@fullcalendar/interaction' // for selectable
 import { supabase } from '~/superbase.js'
 
 const auth = useAuthStore()
@@ -15,7 +14,7 @@ const appointmentClickable = ref()
 const appointmentModal = ref(false)
 const user = ref()
 const calendarOptions = ref({
-  plugins: [dayGridPlugin, interactionPlugin],
+  plugins: [dayGridPlugin],
   initialView: 'dayGridMonth',
   weekends: true,
   selectable: true,
