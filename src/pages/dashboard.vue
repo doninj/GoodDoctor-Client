@@ -32,7 +32,7 @@ function logout() {
 onMounted(async () => {
   const adresses = await supabase.from('adresses_users').select('*').eq('id', auth.user.adresses_id)
   center.value = { lat: adresses.data[0].lat, lng: adresses.data[0].long }
-  const appointment = await supabase.from('appointments').select('*, practitioner_id(*, adresses_id(*))').eq('user_id', auth.user.id).eq('validate_appointment', true)
+  const appointment = await supabase.from('appointments').select('*, practitioner_id(*, adresses_id(*))').eq('user_id', auth.user.id)
   appointments.value = appointment.data
   calendarOptions.value.events = appointment.data.map((app) => {
     return {
