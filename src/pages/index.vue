@@ -10,13 +10,7 @@ const auth = useAuthStore()
 const router = useRouter()
 
 function submitLogin() {
-  try {
-    auth.login(login.value).then(() => {
-      router.push({ path: '/dashboard' })
-    })
-  }
-  catch (e) {
-  }
+  auth.login(login.value)
 }
 </script>
 

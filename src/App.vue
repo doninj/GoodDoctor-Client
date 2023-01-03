@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { useOneSignal } from '@onesignal/onesignal-vue3'
 import { useAuthStore } from '~/store/auth'
 const auth = useAuthStore()
+const oneSignal = useOneSignal()
 // https://github.com/vueuse/head
 // you can use this to manipulate the document head in any components,
 // they will be rendered correctly in the html results with vite-ssg
@@ -24,6 +26,19 @@ useHead({
 })
 onMounted(() => {
   auth.fetchUser()
+  oneSignal.showSlidedownPrompt()
+  oneSignal.on('permissionPromptDisplay', (e) => {
+    console.warn('permissionPromptDisplay', e)
+  })
+  oneSignal.on('subscriptionChange', (e) => {
+    console.warn('subscriptionChange', e)
+  })
+  oneSignal.on('notificationDisplay', (e) => {
+    console.warn('notificationDisplay', e)
+  })
+  oneSignal.on('notificationDismiss', (e) => {
+    console.warn('notificationDismiss', e)
+  })
 })
 </script>
 

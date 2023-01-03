@@ -19,7 +19,7 @@ async function sendRdv() {
       date: calendar.value,
       user_id: auth.user.id,
       practitioner_id: patricien.value.id,
-      validate_appointment: 'accept',
+      appointment_validation_state: 'pending',
     },
   ])
 }
