@@ -1,6 +1,8 @@
 <script setup>
 import { useRouter } from 'vue-router'
+import { useOneSignal } from '@onesignal/onesignal-vue3'
 import { supabase } from '~/superbase.js'
+const oneSignal = useOneSignal()
 
 const patriciens = ref()
 const patricien = ref()
@@ -8,19 +10,14 @@ const isModal = ref(false)
 const route = useRouter()
 const calendar = ref()
 const auth = useAuthStore()
-let oneSignalInitialized = ref(false)
-const initializeOneSignal = async (uid) => {
-  if (oneSignalInitialized)
-    return
-  oneSignalInitialized = true
-  await OneSignal.init({
-    appId: 'ba0e6ef7-d107-480b-b1f1-f59f36039676',
-    notifyButton: {
-      enable: true,
-    },
-    allowLocalhostAsSecureOrigin: true,
-  })
-  await OneSignal.setExternalUserId(uid)
+const oneSignalInitialized = ref(false)
+async function initializeOneSignal(uid) {
+  if (oneSignalInitialized.value)
+    console.log(oneSignalInitialized.value)
+  return
+  oneSignalInitialized.value = true
+  await oneSignal.setExternalUserId(uid)
+  console.log(await oneSignal.getExternalUserId())
 }
 function displayModal(doc) {
   isModal.value = true
@@ -48,7 +45,6 @@ onMounted(async () => {
         await initializeOneSignal(user.id)
     },
   )
-  authListener.data.subscription.unsubscribe()
 })
 </script>
 
