@@ -28,16 +28,16 @@ onMounted(() => {
   auth.fetchUser()
   oneSignal.showSlidedownPrompt()
   oneSignal.on('permissionPromptDisplay', (e) => {
-    console.warn('permissionPromptDisplay', e)
+    console.log('permissionPromptDisplay', e)
   })
   oneSignal.on('subscriptionChange', (e) => {
-    console.warn('subscriptionChange', e)
+    console.log('subscriptionChange', e)
   })
   oneSignal.on('notificationDisplay', (e) => {
-    console.warn('notificationDisplay', e)
+    console.log('notificationDisplay', e)
   })
   oneSignal.on('notificationDismiss', (e) => {
-    console.warn('notificationDismiss', e)
+    console.log('notificationDismiss', e)
   })
 })
 </script>
