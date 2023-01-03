@@ -27,6 +27,7 @@ specifiers:
   markdown-it-link-attributes: ^4.0.1
   markdown-it-shiki: ^0.6.1
   nprogress: ^0.2.0
+  nvm: ^0.0.4
   onesignal-vue: ^1.0.2
   pinia: ^2.0.25
   pnpm: ^7.17.0
@@ -68,6 +69,7 @@ dependencies:
   '@vueuse/head': 1.0.18_vue@3.2.45
   axios: 1.2.0
   nprogress: 0.2.0
+  nvm: 0.0.4
   onesignal-vue: 1.0.2
   pinia: 2.0.25_mgnvym7yiazkylwwogi5r767ue
   primeicons: 6.0.1
@@ -6699,6 +6701,12 @@ packages:
     dependencies:
       boolbase: 1.0.0
     dev: true
+
+  /nvm/0.0.4:
+    resolution: {integrity: sha512-jvmyELykYcdyd0VCGY0E8Aqe5MngEasVvlPvrcJHbwBMUbVqa72mPdQuPzyTcykEtEx7jDrMY0QA5MoV+8EhgA==}
+    deprecated: This is NOT the correct nvm. Visit https://nvm.sh and use the curl command to install it.
+    hasBin: true
+    dev: false
 
   /nwsapi/2.2.2:
     resolution: {integrity: sha512-90yv+6538zuvUMnN+zCr8LuV6bPFdq50304114vJYJ8RDyK8D5O9Phpbd6SZWgI7PwzmmfN1upeOJlvybDSgCw==}

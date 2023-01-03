@@ -25,6 +25,7 @@
     "@vueuse/head": "^1.0.18",
     "axios": "^1.2.0",
     "nprogress": "^0.2.0",
+    "nvm": "^0.0.4",
     "onesignal-vue": "^1.0.2",
     "pinia": "^2.0.25",
     "primeicons": "^6.0.1",
